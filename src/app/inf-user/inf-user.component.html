@@ -1,0 +1,26 @@
+<ActionBar class="action-bar">
+    <NavigationButton visibility="hidden"></NavigationButton>
+    <GridLayout columns="50, *">
+        <Label class="action-bar-title" text="Información del Usuario" colSpan="2"></Label>
+
+        <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+    </GridLayout>
+</ActionBar>
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+  
+  <Label class="header" text="Información del Usuario"></Label>
+  <Image class="nt-drawer__header-image fas t-50" src="font://&#xf2bd;"></Image>
+
+  <Label class="header1" text="Usuario: {{username}}"></Label>
+   <Label class="header1" text="Nombre: {{name}}"></Label>
+  <Label class="header1" text="Correo: {{email}}" ></Label>
+  <Label class="header1" text="Teléfono: {{phone}}" ></Label>
+
+  <Button text="Aceptar" class="btn btn-primary"></Button>
+
+   
+  </StackLayout>
+
+</FlexboxLayout>

@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core'
 import { Routes } from '@angular/router'
 import { NativeScriptRouterModule } from '@nativescript/angular'
+import { InfUserComponent } from './inf-user/inf-user.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'inf-user', component: InfUserComponent },
   {
     path: 'home',
     loadChildren: () => import('~/app/home/home.module').then((m) => m.HomeModule),
@@ -24,6 +28,7 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('~/app/settings/settings.module').then((m) => m.SettingsModule),
   },
+
 ]
 
 @NgModule({

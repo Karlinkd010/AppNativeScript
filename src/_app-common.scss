@@ -22,12 +22,20 @@
 
 // Common page class
 .page__content {
+
+ 
   &-icon,
   &-placeholder {
     color: const(grey);
     font-size: 20;
     vertical-align: center;
-    horizontal-align: center;
+
+  }
+
+  .page{
+    align-items: center;
+    flex-direction: column;
+
   }
 
   &-icon {
@@ -39,5 +47,49 @@
 
 // Drawer navigation custom styles
 .nt-drawer__header-image {
-  color: const(grey);
+  color: const(rgb(141, 140, 212));
+  margin-bottom:90;
 }
+
+.form {
+  margin-left: 30;
+  margin-right: 30;
+  flex-grow: 5;
+  vertical-align: middle;
+}
+
+.header{
+font-size: 25;
+text-align: center;
+color:darkblue;
+font-weight: 600;
+margin-bottom:30;
+
+}
+.header1{
+  font-size: 20;
+  text-align: center;
+  color:rgb(2, 0, 1);
+  font-weight: 600;
+  margin-bottom:70;
+  
+  }
+
+
+
+.btn-primary{
+
+  background-color:midnightblue;
+  border-radius: 5px;
+  font-size: 20;
+  color: azure;
+ 
+}
+.input-field{
+  margin-bottom: 20;
+}
+.input{
+
+  font-size: 20;
+}
+

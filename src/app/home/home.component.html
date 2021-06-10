@@ -1,13 +1,33 @@
+
 <ActionBar class="action-bar">
     <NavigationButton visibility="hidden"></NavigationButton>
     <GridLayout columns="50, *">
-        <Label class="action-bar-title" text="Home" colSpan="2"></Label>
+        <Label class="action-bar-title" text="Operaciones Basicas" colSpan="2"></Label>
 
         <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
     </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf015;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+  
+  <Label class="header" text="Operaciones Básicas"></Label>
+
+  <StackLayout class="input-field">
+    <TextField class="input"  keyboardType="number" [(ngModel)]="numero1" ></TextField>
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField class="input"  keyboardType="number" [(ngModel)]="numero2" ></TextField>
+  </StackLayout>
+
+  <Button text="Multiplicación" (tap)="onButtonClick()" class="btn btn-primary"></Button>
+  <Button text="División" (tap)="onButtonClick1()" class="btn btn-primary"></Button>
+  <Button text="Suma" (tap)="onButtonClick2()" class="btn btn-primary"></Button>
+  <Button text="Resta" (tap)="onButtonClick3()" class="btn btn-primary"></Button>
+  
+   
+  </StackLayout>
+
+</FlexboxLayout>

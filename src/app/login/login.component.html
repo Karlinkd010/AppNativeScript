@@ -1,0 +1,32 @@
+
+<ActionBar class="action-bar">
+    <NavigationButton visibility="hidden"></NavigationButton>
+    <GridLayout columns="50, *">
+        <Label class="action-bar-title" text="Logín" colSpan="2"></Label>
+
+        <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+    </GridLayout>
+</ActionBar>
+
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+  
+  <Label class="header" text="cSecurity"></Label>
+  <Image class="nt-drawer__header-image fas t-60" src="font://&#xf2bd;"></Image>
+
+  <StackLayout class="input-field">
+    <TextField class="input"  keyboardType="number"  ></TextField>
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField class="input"  keyboardType="number" ></TextField>
+  </StackLayout>
+
+  <Button text="Acceder" class="btn btn-primary"></Button>
+
+  
+   
+  </StackLayout>
+
+</FlexboxLayout>
