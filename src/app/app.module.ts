@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import {LoginComponent} from './login/login.component'
 import {InfUserComponent} from './inf-user/inf-user.component'
+import {CalculadoraComponent} from './calculadora/calculadora.component'
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import {InfUserComponent} from './inf-user/inf-user.component'
             ],
   declarations: [AppComponent,
                 LoginComponent,
-                InfUserComponent
+                InfUserComponent,
+                CalculadoraComponent,
               ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [UserService],

@@ -48,9 +48,14 @@
 // Drawer navigation custom styles
 .nt-drawer__header-image {
   color: const(rgb(141, 140, 212));
-  margin-bottom:90;
+  margin-top: 30;
+  margin-bottom:10;
 }
 
+.nt-drawer__header-image1 {
+  color: const(rgb(141, 140, 212));
+  margin-bottom:30;
+}
 .form {
   margin-left: 30;
   margin-right: 30;

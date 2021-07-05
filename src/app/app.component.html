@@ -6,7 +6,7 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 <RadSideDrawer [drawerTransition]="sideDrawerTransition">
   <GridLayout tkDrawerContent rows="auto, *" class="nt-drawer__content">
     <StackLayout row="0" class="nt-drawer__header">
-      <Image class="nt-drawer__header-image fas t-36" src="font://&#xf2bd;"></Image>
+      <Image class="nt-drawer__header-image fas t-36" src="https://avatars.githubusercontent.com/u/65685992?v=4"></Image>
       <Label class="nt-drawer__header-brand" text="Karlin"></Label>
       <Label class="nt-drawer__header-footnote" text="karlinkd010@gmail.com"></Label>
     </StackLayout>
@@ -21,6 +21,15 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
           <Label col="0" text="&#xf015;" class="nt-icon fas"></Label>
           <Label col="1" text="Operaciones Basicas" class="p-r-10"></Label>
         </GridLayout>
+        
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/calculadora')"
+          (tap)="onNavItemTap('/calculadora')">
+          <Label col="0" text="&#xf1ec;" class="nt-icon fas"></Label>
+          <Label col="1" text="Calculadora" class="p-r-10"></Label>
+        </GridLayout>
 
         <GridLayout
           columns="auto, *"
@@ -29,7 +38,18 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
           (tap)="onNavItemTap('/login')"
         >
           <Label col="0" text="&#xf2f6;" class="nt-icon fas"></Label>
-          <Label col="1" text="login 3" class="p-r-10"></Label>
+          <Label col="1" text="login " class="p-r-10"></Label>
+        </GridLayout>
+
+        
+        <GridLayout
+          columns="auto, *"
+          class="nt-drawer__list-item"
+          [class.-selected]="isComponentSelected('/inf-user')"
+          (tap)="onNavItemTap('/inf-user')"
+        >
+          <Label col="0" text="&#xf007;" class="nt-icon fas"></Label>
+          <Label col="1" text="Perfil" class="p-r-10"></Label>
         </GridLayout>
 
         <GridLayout
@@ -60,15 +80,6 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
           <Label col="1" text="Practica 3" class="p-r-10"></Label>
         </GridLayout>
 
-        <GridLayout
-          columns="auto, *"
-          class="nt-drawer__list-item"
-          [class.-selected]="isComponentSelected('/inf-user')"
-          (tap)="onNavItemTap('/inf-user')"
-        >
-          <Label col="0" text="&#xf007;" class="nt-icon fas"></Label>
-          <Label col="1" text="Información del Usuario" class="p-r-10"></Label>
-        </GridLayout>
 
         
 

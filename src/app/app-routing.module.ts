@@ -3,10 +3,12 @@ import { Routes } from '@angular/router'
 import { NativeScriptRouterModule } from '@nativescript/angular'
 import { InfUserComponent } from './inf-user/inf-user.component';
 import { LoginComponent } from './login/login.component';
+import {CalculadoraComponent} from './calculadora/calculadora.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
+  { path: 'calculadora', component: CalculadoraComponent },
   { path: 'inf-user', component: InfUserComponent },
   {
     path: 'home',
