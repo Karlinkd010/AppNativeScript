@@ -1,0 +1,31 @@
+.pantalla{
+    background: cyan;
+    text-align: center;
+    margin-top: 50;
+    margin: 10;
+    height: 100;
+}
+
+.txt-res{
+    font-size: 25;
+    margin: 25;
+    color: black;    
+}
+
+.cuerpo{
+    background: cornflowerblue;
+}
+.btn-button{
+    background: rgb(216, 212, 153);
+    width: 25%;
+    margin: 0;
+}
+.cero{
+    width: 75%;
+    margin: 0;
+}
+.after{
+    width: 50%;
+    margin: 0;
+}
+
