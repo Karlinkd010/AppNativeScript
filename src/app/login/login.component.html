@@ -9,18 +9,28 @@
 </ActionBar>
 
 
-<FlexboxLayout class="page">
-  <StackLayout class="form">
+<FlexboxLayout class="">
+  <StackLayout class="frm">
   
-  <Label class="header" text="cSecurity"></Label>
+  <Label class="header1" text="cSecurity"></Label>
   <Image class="nt-drawer__header-image fas t-60" src="font://&#xf2bd;"></Image>
 
   <StackLayout class="input-field">
-    <TextField class="input"  keyboardType="number"  ></TextField>
+      <TextField hint="Correo electrónico" 
+            class="input"
+            [text]='user' 
+           
+           >
+    </TextField>
   </StackLayout>
 
   <StackLayout class="input-field">
-    <TextField class="input"  keyboardType="number" ></TextField>
+          <TextField hint="Contraseña" 
+            class="input"
+            [text]='password' 
+            secure="true"
+           >
+    </TextField>
   </StackLayout>
 
   <Button text="Acceder" class="btn btn-primary"></Button>

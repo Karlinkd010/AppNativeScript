@@ -37,6 +37,11 @@
     flex-direction: column;
 
   }
+  .page1{
+    margin-top: 50;
+    flex-direction: column;
+
+  }
 
   &-icon {
     font-size: 72;
@@ -48,12 +53,11 @@
 // Drawer navigation custom styles
 .nt-drawer__header-image {
   color: const(rgb(141, 140, 212));
-  margin-top: 30;
-  margin-bottom:10;
+  margin-bottom:15;
 }
 
 .nt-drawer__header-image1 {
-  color: const(rgb(141, 140, 212));
+  color: const(rgb(5, 3, 70));
   margin-bottom:30;
 }
 .form {
@@ -61,6 +65,14 @@
   margin-right: 30;
   flex-grow: 5;
   vertical-align: middle;
+}
+
+.frm {
+  margin-left: 30;
+  margin-right: 30;
+  flex-grow: 5;
+  margin-top: 7%;
+
 }
 
 .header{
@@ -72,11 +84,11 @@ margin-bottom:30;
 
 }
 .header1{
-  font-size: 20;
+  font-size: 25;
   text-align: center;
-  color:rgb(2, 0, 1);
+  color:rgb(207, 108, 108);
   font-weight: 600;
-  margin-bottom:70;
+  margin-bottom:15;
   
   }
 
@@ -84,10 +96,11 @@ margin-bottom:30;
 
 .btn-primary{
 
-  background-color:midnightblue;
-  border-radius: 5px;
+  background-color:rgb(207, 108, 108);
+  border-radius: 2%;
   font-size: 20;
-  color: azure;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: rgb(15, 15, 15);
  
 }
 .input-field{
@@ -96,5 +109,6 @@ margin-bottom:30;
 .input{
 
   font-size: 20;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 

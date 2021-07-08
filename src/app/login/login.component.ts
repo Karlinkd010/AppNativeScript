@@ -10,10 +10,14 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 })
 
 export class LoginComponent implements OnInit {
+	user:string;
+	password:string;
 
 	constructor() { }
 
-	ngOnInit() { }
+	ngOnInit() { 
+
+	}
 
 	onDrawerButtonTap(): void {
 		const sideDrawer = <RadSideDrawer>Application.getRootView()
