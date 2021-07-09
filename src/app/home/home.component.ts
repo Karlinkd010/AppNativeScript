@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
 import { Application,Dialogs } from '@nativescript/core'
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 @Component({
   selector: 'Home',
   templateUrl: './home.component.html',

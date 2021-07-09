@@ -1,13 +1,41 @@
 <ActionBar class="action-bar">
     <NavigationButton visibility="hidden"></NavigationButton>
     <GridLayout columns="50, *">
-        <Label class="action-bar-title" text="Browse" colSpan="2"></Label>
+        <Label class="action-bar-title" text="ShareTEXT" colSpan="2"></Label>
 
         <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
     </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+
+<FlexboxLayout class="">
+  <StackLayout class="frm">
+  
+  <Label class="header1" text="Share TEXT "></Label>
+  <Image class="nt-drawer__header-image fas t-60" src="font://&#xf14d;"></Image>
+
+  <StackLayout class="input-field">
+      <TextField hint="Asunto" 
+            class="input"
+            [(ngModel)]="a"
+           
+           >
+    </TextField>
+  </StackLayout>
+
+  <StackLayout class="input-field">
+          <TextField hint="Texto" 
+            class="input"
+            [(ngModel)]="b"
+           >
+    </TextField>
+  </StackLayout>
+
+  <Button text="Enviar" class="btn btn-primary" (tap)="send()"></Button>
+
+  
+   
+  </StackLayout>
+
+</FlexboxLayout>
+
