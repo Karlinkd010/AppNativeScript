@@ -50,10 +50,13 @@
     "@nativescript/core": "~8.0.0",
     "@nativescript/social-share": "^2.0.4",
     "@nativescript/theme": "~3.0.1",
+    "@nstudio/nativescript-fancyalert": "^4.0.0",
+    "nativescript-feedback": "^2.0.0",
     "nativescript-social-share": "^1.6.0",
     "nativescript-ui-sidedrawer": "~9.0.3",
     "reflect-metadata": "~0.1.13",
     "rxjs": "~6.6.7",
+    "tns-core-modules": "^6.5.27",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

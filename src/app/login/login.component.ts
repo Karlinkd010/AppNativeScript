@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Application } from '@nativescript/core';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
 
 @Component({
 	moduleId: module.id,
@@ -10,10 +11,18 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 })
 
 export class LoginComponent implements OnInit {
+	private feedback: Feedback;
 	user:string;
 	password:string;
 
-	constructor() { }
+	constructor() { 
+		this.feedback = new Feedback();
+
+		this.feedback.warning({
+			title:"Aviso",
+			message: "Aun no has iniciado sesión, "
+		  });
+	}
 
 	ngOnInit() { 
 
