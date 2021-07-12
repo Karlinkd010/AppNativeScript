@@ -22,10 +22,12 @@
     <TextField class="input"  keyboardType="number" [(ngModel)]="numero2" ></TextField>
   </StackLayout>
 
-  <Button text="Multiplicación" (tap)="onButtonClick()" class="btn btn-primary"></Button>
-  <Button text="División" (tap)="onButtonClick1()" class="btn btn-primary"></Button>
-  <Button text="Suma" (tap)="onButtonClick2()" class="btn btn-primary"></Button>
-  <Button text="Resta" (tap)="onButtonClick3()" class="btn btn-primary"></Button>
+  <Button text="Suma" id="btn-suma" (tap)="onTap($event)" class="btn btn-primary"></Button>
+  <Button text="Resta" id="btn-resta"  (tap)="onTap($event)" class="btn btn-primary"></Button>
+
+  <Button text="Multiplicación" id="btn-multi"  (tap)="onTap($event)" class="btn btn-primary"></Button>
+  <Button text="División" id="btn-divi"  (tap)="onTap($event)" class="btn btn-primary"></Button>
+
   
    
   </StackLayout>

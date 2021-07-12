@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core'
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer'
-import { Application,Dialogs } from '@nativescript/core'
+import { Application,Button,Dialogs, EventData } from '@nativescript/core'
 import { TNSFancyAlert, TNSFancyAlertButton } from "@nstudio/nativescript-fancyalert";
 import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
-import { Color } from "tns-core-modules/color";
+import { RouterExtensions } from '@nativescript/angular';
+
 
 @Component({
   selector: 'Home',
@@ -16,16 +17,18 @@ export class HomeComponent implements OnInit {
   numero2:number;
   numero1:number;
   res:number;
-  constructor() {
+  constructor(   private routerExtensions: RouterExtensions,) {
     this.feedback = new Feedback();
+
   }
   ngOnInit(): void {
 
   }
-  
-  onButtonClick(){
 
-    if(this.numero1 ==undefined || this.numero1 ==NaN || this.numero2 ==undefined || this.numero2==NaN){
+  onTap(args: EventData) {
+    let button = args.object as Button;
+
+    if(this.numero1 ===null ||  this.numero2===null){
       this.feedback.error({
         title: "¡Ups!, ¡Ocurrio un error!",
         message: "¡Campos vacios, no se puede realizar la operación!",
@@ -33,52 +36,76 @@ export class HomeComponent implements OnInit {
       })
 
     }else{
+
+    switch (button.id) {
+        case "btn-suma":
+          this.suma();
+         
+            break;
+        case "btn-resta":
+          this.resta();
+            
+            break;
+        case "btn-multi":
+          this.multiplicacion();
+            
+            break;
+        case "btn-divi":
+          this.division();
+           
+            break;
+    }
+    this.routerExtensions.navigate(["/home"]);
+
+  }
+}
+  
+  multiplicacion(){
       TNSFancyAlert.showSuccess(
-        "Success!",
+        "Multiplicación!",
         "Resultado: " +this.multi(this.numero1,this.numero2),
         "Aceptar!"
       ).then(() => {
+       
 
       });
 
     }
 
    
-  }
+  
 
-  onButtonClick1(){
+  division(){
 
     this.res=(this.numero1 / this.numero2);
- 
-     Dialogs.alert({
-       title:"Resultado",
-       message:this.res.toString() ,
-       okButtonText: "Aceptar"
-     }).then(function(){
-       console.log("Dialogo");
-     });
+    TNSFancyAlert.showSuccess(
+      "División!",
+      "Resultado: " +this.res.toString(),
+      "Aceptar!"
+    ).then(() => {
+    });
    }
-   onButtonClick2(){
+
+   suma(){
     this.res=parseFloat(this.numero1.toString()) + parseFloat(this.numero2.toString());
  
-     Dialogs.alert({
-       title:"Resultado",
-       message:this.res.toString() ,
-       okButtonText: "Aceptar"
-     }).then(function(){
-       console.log("Dialogo");
-     });
+    TNSFancyAlert.showInfo(
+      "Suma!",
+      "Resultado: " +this.res.toString(),
+      "Aceptar!"
+    ).then(() => {
+    });
    }
-   onButtonClick3(){
+
+   resta(){
     this.res=(this.numero1 - this.numero2);
  
-     Dialogs.alert({
-       title:"Resultado",
-       message:this.res.toString() ,
-       okButtonText: "Aceptar"
-     }).then(function(){
-       console.log("Dialogo");
-     });
+    TNSFancyAlert.showInfo(
+      "Resta!",
+      "Resultado: " +this.res.toString(),
+      "Aceptar!"
+    ).then(() => {
+    });
    }
 
   onDrawerButtonTap(): void {
