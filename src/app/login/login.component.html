@@ -18,22 +18,24 @@
   <StackLayout class="input-field">
       <TextField hint="Correo electrónico" 
             class="input"
-            [text]='user' 
+            
+           [(ngModel)]='this.model.email'
            
            >
-    </TextField>
+           </TextField>
   </StackLayout>
 
   <StackLayout class="input-field">
           <TextField hint="Contraseña" 
             class="input"
-            [text]='password' 
+            
+            [(ngModel)]='this.model.password'
             secure="true"
            >
-    </TextField>
+           </TextField>
   </StackLayout>
 
-  <Button text="Acceder" class="btn btn-primary"></Button>
+  <Button text="Acceder" (tap)="auth()" class="btn btn-primary"></Button>
 
   
    

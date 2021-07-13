@@ -1,5 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core'
 import { NativeScriptModule } from '@nativescript/angular'
+import { NativeScriptFormsModule } from "@nativescript/angular";
 import { UserService} from './service/user.service'
 import { NativeScriptUISideDrawerModule } from 'nativescript-ui-sidedrawer/angular'
 import { FormsModule } from '@angular/forms';
@@ -14,6 +15,7 @@ import {CalculadoraComponent} from './calculadora/calculadora.component'
 @NgModule({
   bootstrap: [AppComponent],
   imports: [AppRoutingModule,
+    NativeScriptFormsModule,
             NativeScriptModule, 
             NativeScriptUISideDrawerModule,
             FormsModule,

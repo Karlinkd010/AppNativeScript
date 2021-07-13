@@ -4,5 +4,8 @@ export class UserModel{
     email:string;
     phone:number;
     username:string;
+    password:string;
+    foto:string;
+    
 
 }
