@@ -1,7 +1,7 @@
 import { NativeScriptConfig } from '@nativescript/core';
 
 export default {
-  id: 'org.nativescript.PrimerApp',
+  id: 'org.nativescript.appfirebase',
   appPath: 'src',
   appResourcesPath: 'App_Resources',
   android: {

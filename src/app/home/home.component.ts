@@ -5,6 +5,8 @@ import { TNSFancyAlert, TNSFancyAlertButton } from "@nstudio/nativescript-fancya
 import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
 import { RouterExtensions } from '@nativescript/angular';
 
+import { firebase } from "@nativescript/firebase";
+
 
 @Component({
   selector: 'Home',
@@ -19,7 +21,18 @@ export class HomeComponent implements OnInit {
   res:number;
   constructor(   private routerExtensions: RouterExtensions,) {
     this.feedback = new Feedback();
-
+    
+    firebase.init({
+        // Optionally pass in properties for database, authentication and cloud messaging,
+        // see their respective docs.
+      }).then(
+        () => {
+          console.log("firebase.init done");
+        },
+        error => {
+          console.log(`firebase.init error: ${error}`);
+        }
+      );
   }
   ngOnInit(): void {
 
@@ -28,7 +41,7 @@ export class HomeComponent implements OnInit {
   onTap(args: EventData) {
     let button = args.object as Button;
 
-    if(this.numero1 ===null ||  this.numero2===null){
+    if(this.numero1 ===undefined || this.numero2===undefined){
       this.feedback.error({
         title: "¡Ups!, ¡Ocurrio un error!",
         message: "¡Campos vacios, no se puede realizar la operación!",
@@ -123,3 +136,5 @@ export class HomeComponent implements OnInit {
 
  
 }
+
+

@@ -48,6 +48,7 @@
     "@angular/router": "~11.2.7",
     "@nativescript/angular": "~11.8.0",
     "@nativescript/core": "~8.0.0",
+    "@nativescript/firebase": "^11.1.3",
     "@nativescript/social-share": "^2.0.4",
     "@nativescript/theme": "~3.0.1",
     "@nstudio/nativescript-fancyalert": "^4.0.0",

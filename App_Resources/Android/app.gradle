@@ -11,10 +11,17 @@
 
 android {
   defaultConfig {
+    multiDexEnabled true
     minSdkVersion 17
     generatedDensities = []
   }
   aaptOptions {
     additionalParameters "--no-version-vectors"
+  }
+  dexOptions {
+    javaMaxHeapSize "4g"
+  }
+  project.ext {
+    googlePlayServicesVersion = "15.0.0"
   }
 }
