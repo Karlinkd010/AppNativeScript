@@ -32,11 +32,7 @@
 
   }
 
-  .page{
-    align-items: center;
-    flex-direction: column;
 
-  }
   .page1{
     margin-top: 50;
     flex-direction: column;
@@ -60,11 +56,17 @@
   color: const(rgb(5, 3, 70));
   margin-bottom:30;
 }
+.page{
+  margin-top: 5%;
+  align-items: center;
+  flex-direction: column;
+
+}
 .form {
   margin-left: 30;
   margin-right: 30;
   flex-grow: 5;
-  vertical-align: middle;
+  margin-top: 7%;
 }
 
 .frm {
@@ -98,16 +100,19 @@ margin-bottom:30;
 
   background-color:rgb(207, 108, 108);
   border-radius: 2%;
+  width: 100%;
   font-size: 20;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: rgb(15, 15, 15);
  
 }
 .input-field{
-  margin-bottom: 20;
+  margin-bottom: 10;
+  width: 100%;
 }
 .input{
-
+  
+  width: 100%;
   font-size: 20;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }

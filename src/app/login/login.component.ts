@@ -4,6 +4,8 @@ import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
 import { firebase } from '@nativescript/firebase';
 import { UserModel } from '../model/user.model';
+import { capitalizationType, Dialogs, inputType, PromptOptions, PromptResult } from "@nativescript/core";
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
 	moduleId: module.id,
@@ -13,25 +15,15 @@ import { UserModel } from '../model/user.model';
 })
 
 export class LoginComponent implements OnInit {
-
-	name:string;
-    email:string;
-    phone:number;
-    username:string;
-    password:string;
-    foto:string;
 	private feedback: Feedback;
-
 	public model: UserModel;
+	isLoggingIn = true;
 
-
-	constructor( ) { 
+	constructor( private router: RouterExtensions) { 
 		this.feedback = new Feedback();
 		this.model=new UserModel();
-		this.model.email="karlinkd010@gmail.com";
-		this.model.password="karlin";
-
-
+		this.model.email="";
+		this.model.password="";
 	}
 
 	ngOnInit() { 
@@ -44,6 +36,9 @@ export class LoginComponent implements OnInit {
 	
 		
 	}
+	toggleForm() {
+		this.isLoggingIn = !this.isLoggingIn;
+	  }
 
 	onDrawerButtonTap(): void {
 		const sideDrawer = <RadSideDrawer>Application.getRootView()
@@ -73,15 +68,51 @@ export class LoginComponent implements OnInit {
 			password: this.model.password
 		}).then((user)=>{
 			console.dir(user);
-		}, (error)=>{
-			this.feedback.error({
-				title:"Error",
-				message: "No se pudo iniciar sessión "+error
+			this.feedback.success({
+				title:"Bienvenido",
+				message: "Inició sessión correctamente "
 				
 			  });
+
+			this.router.navigate(['/home']);
+		
+			
+		}, (error)=>{
+			console.log(error);
+			this.feedback.error({
+				title:"Error",
+				message: "No se pudo iniciar sessión "
+				
+			  });
+
+
 	
 		});
 	}
+	forgotPassword() {
+
+		let options: PromptOptions = {
+            title: "Reestablecer contraseña",
+            message: "Escribe tu correo electrónico",
+            okButtonText: "OK",
+            cancelButtonText: "Cancel",
+            cancelable: true,
+            inputType: inputType.text, // email, number, text, password, or email
+            capitalizationType: capitalizationType.sentences // all. none, sentences or words
+        };
+
+        Dialogs.prompt(options).then((result: PromptResult) => {
+            console.log("Hello, " + result.text);
+        });
+	  }
+
+	  submit() {
+		if (this.isLoggingIn) {
+			this.auth();
+		} else {
+			// Perform the registration
+		}
+	  }
 
 	  
 }

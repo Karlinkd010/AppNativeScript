@@ -9,8 +9,8 @@
 </ActionBar>
 
 
-<FlexboxLayout class="">
-  <StackLayout class="frm">
+<FlexboxLayout class="page">
+  <StackLayout class="form">
   
   <Label class="header1" text="cSecurity"></Label>
   <Image class="nt-drawer__header-image fas t-60" src="font://&#xf2bd;"></Image>
@@ -33,12 +33,22 @@
             secure="true"
            >
            </TextField>
+           <StackLayout *ngIf="!isLoggingIn" class="input-field">
+              <TextField class="input" hint="Confirm password" ...></TextField>
+           </StackLayout>
+
+          <Button [text]="isLoggingIn ? 'Log In' : 'Sign Up'" (tap)="submit()" class="btn-primary"></Button>
+           <Label (tap)="forgotPassword()" *ngIf="isLoggingIn" text="Forgot your password?" class="forgot"></Label>
+  </StackLayout>
   </StackLayout>
 
-  <Button text="Acceder" (tap)="auth()" class="btn btn-primary"></Button>
+  <Label (tap)="toggleForm()" class="footer">
+    <FormattedString>
+      <Span [text]="isLoggingIn ? 'Don’t have an account? ' : 'Back to Login'"></Span>
+      <Span [text]="isLoggingIn ? 'Sign up' : ''" class="bold"></Span>
+    </FormattedString>
+  </Label>
 
-  
-   
-  </StackLayout>
+
 
 </FlexboxLayout>

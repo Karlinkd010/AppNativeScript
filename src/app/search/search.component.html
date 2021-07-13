@@ -7,7 +7,27 @@
     </GridLayout>
 </ActionBar>
 
-<GridLayout class="page__content">
-  <Label class="page__content-icon fas" text="&#xf002;"></Label>
-  <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
-</GridLayout>
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+  
+  <Label class="header" text="Operaciones Básicas"></Label>
+
+  <StackLayout class="input-field">
+    <TextField class="input"  keyboardType="number" [(ngModel)]="numero1" ></TextField>
+  </StackLayout>
+
+  <StackLayout class="input-field">
+    <TextField class="input"  keyboardType="number" [(ngModel)]="numero2" ></TextField>
+  </StackLayout>
+
+  <Button text="Suma" id="btn-suma" (tap)="onTap($event)" class="btn btn-primary"></Button>
+  <Button text="Resta" id="btn-resta"  (tap)="onTap($event)" class="btn btn-primary"></Button>
+
+  <Button text="Multiplicación" id="btn-multi"  (tap)="onTap($event)" class="btn btn-primary"></Button>
+  <Button text="División" id="btn-divi"  (tap)="onTap($event)" class="btn btn-primary"></Button>
+
+  
+   
+  </StackLayout>
+
+</FlexboxLayout>
