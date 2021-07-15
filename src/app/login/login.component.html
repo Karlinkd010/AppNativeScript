@@ -2,9 +2,7 @@
 <ActionBar class="action-bar">
     <NavigationButton visibility="hidden"></NavigationButton>
     <GridLayout columns="50, *">
-        <Label class="action-bar-title" text="Logín" colSpan="2"></Label>
-
-        <Label class="fas" text="&#xf0c9;" (tap)="onDrawerButtonTap()"></Label>
+        <Label class="action-bar-title" text="Iniciar Sessión" colSpan="2"></Label>
     </GridLayout>
 </ActionBar>
 
@@ -15,6 +13,7 @@
   <Label class="header1" text="cSecurity"></Label>
   <Image class="nt-drawer__header-image fas t-60" src="font://&#xf2bd;"></Image>
 
+ 
   <StackLayout class="input-field">
       <TextField hint="Correo electrónico" 
             class="input"
@@ -32,21 +31,20 @@
             [(ngModel)]='this.model.password'
             secure="true"
            >
-           </TextField>
-           <StackLayout *ngIf="!isLoggingIn" class="input-field">
-              <TextField class="input" hint="Confirm password" ...></TextField>
-           </StackLayout>
-
-          <Button [text]="isLoggingIn ? 'Log In' : 'Sign Up'" (tap)="submit()" class="btn-primary"></Button>
-           <Label (tap)="forgotPassword()" *ngIf="isLoggingIn" text="Forgot your password?" class="forgot"></Label>
-  </StackLayout>
+           </TextField>     
   </StackLayout>
 
-  <Label (tap)="toggleForm()" class="footer">
+
+  <Button (tap)="auth()" class="btn-primary" text="Iniciar sesión"></Button>
+           <Label (tap)="forgotPassword()"  text="¿Olvidaste tu contraseña?" class="forgot"></Label>
+  </StackLayout>
+
+  <Label  class="footer" (tap)="registro()">
     <FormattedString>
-      <Span [text]="isLoggingIn ? 'Don’t have an account? ' : 'Back to Login'"></Span>
-      <Span [text]="isLoggingIn ? 'Sign up' : ''" class="bold"></Span>
+      <Span text="¿No tienes una cuenta?, "  ></Span> 
+      <Span text="Registrarse" class="bold" ></Span>
     </FormattedString>
+    
   </Label>
 
 

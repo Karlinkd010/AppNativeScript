@@ -1,0 +1,56 @@
+<ActionBar class="action-bar">
+    <NavigationButton visibility="hidden"></NavigationButton>
+    <GridLayout columns="50, *">
+        <Label class="action-bar-title" text="Registro nuevo usuario" colSpan="2"></Label>
+    </GridLayout>
+</ActionBar>
+
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+  
+    <Label class="header1" text="cSecurity"></Label>
+    <Image class="nt-drawer__header-image fas t-60" src="font://&#xf2bd;"></Image>
+
+    
+    <StackLayout class="input-field">
+            <TextField hint="Correo electrónico" 
+                    class="input"          
+                [(ngModel)]='this.model.email'          
+                >
+                </TextField>
+        </StackLayout>
+
+        <StackLayout class="input-field">
+                <TextField hint="Contraseña" 
+                    class="input"      
+                    [(ngModel)]='this.model.password'
+                    secure="true"
+                >
+                </TextField>     
+        </StackLayout>
+
+        <StackLayout  class="input-field">
+        <TextField class="input" 
+                hint="Confirmar contraseña" 
+                [(ngModel)]='this.model.password2' 
+                secure="true"
+                >
+                </TextField>
+        </StackLayout>
+
+        <Button  (tap)="Create()" class="btn-primary" text="Registrarse"></Button>
+
+  </StackLayout>
+
+   <Label  class="footer" (tap)="login1()">
+    <FormattedString>
+        <Span text="Ya tengo una cuenta, "  ></Span> 
+      <Span text="Iniciar sessión" class="bold" ></Span>
+    </FormattedString>
+    
+  </Label>
+
+
+
+</FlexboxLayout>

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import {LoginComponent} from './login/login.component'
+import {RegistroComponent} from './login/registro/registro.component'
 import {InfUserComponent} from './inf-user/inf-user.component'
 import {CalculadoraComponent} from './calculadora/calculadora.component'
 
@@ -15,7 +16,7 @@ import {CalculadoraComponent} from './calculadora/calculadora.component'
 @NgModule({
   bootstrap: [AppComponent],
   imports: [AppRoutingModule,
-    NativeScriptFormsModule,
+            NativeScriptFormsModule,
             NativeScriptModule, 
             NativeScriptUISideDrawerModule,
             FormsModule,
@@ -25,6 +26,7 @@ import {CalculadoraComponent} from './calculadora/calculadora.component'
                 LoginComponent,
                 InfUserComponent,
                 CalculadoraComponent,
+                RegistroComponent
               ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [UserService],

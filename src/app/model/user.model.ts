@@ -5,6 +5,7 @@ export class UserModel{
     phone:number;
     username:string;
     password:string;
+    password2:string;
     foto:string;
     
 
