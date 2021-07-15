@@ -11,6 +11,7 @@ import {LoginComponent} from './login/login.component'
 import {RegistroComponent} from './login/registro/registro.component'
 import {InfUserComponent} from './inf-user/inf-user.component'
 import {CalculadoraComponent} from './calculadora/calculadora.component'
+import {Restablecer_passComponent} from './login/restablecer_pass/restablecer_pass.component'
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {CalculadoraComponent} from './calculadora/calculadora.component'
                 LoginComponent,
                 InfUserComponent,
                 CalculadoraComponent,
-                RegistroComponent
+                RegistroComponent,
+                Restablecer_passComponent
               ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [UserService],

@@ -60,45 +60,12 @@ export class LoginComponent implements OnInit {
 		});
 	}
 
-	forgotPassword() {
-
-		let options: PromptOptions = {
-            title: "Reestablecer la  contraseña",
-            message: "Escribe tu correo electrónico",
-            okButtonText: "OK",
-            cancelButtonText: "Cancel",
-            cancelable: true,
-            inputType: inputType.text, // email, number, text, password, or email
-            capitalizationType: capitalizationType.sentences // all. none, sentences or words
-        };
-		Dialogs.prompt(options).then((result: PromptResult) => {
-			this.resetPassword(result.text);
-            console.log("Correo enviado, " + result.text);
-        });
-	}
-	
-	public resetPassword(mail:string){
-		firebase.sendPasswordResetEmail(mail)
-		.then(() => 
-					
-					this.feedback.success({
-						title:"Excelente",
-						message: "Se ha enviado un correo para reestablecer la contraseña"
-						
-					})
-
-		)
-		.catch(error => this.feedback.error({
-						title:"Erroe",
-						message: "Verifique su correo electronico"
-						
-					})
-					
-
-		);
-	}
 	registro(){
 		this.router.navigate(['/registro']);
+	}
+
+	restablecer(){
+		this.router.navigate(['/restablcer']);
 	}
 }
 

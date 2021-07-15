@@ -1,7 +1,7 @@
 <ActionBar class="action-bar">
     <NavigationButton visibility="hidden"></NavigationButton>
     <GridLayout columns="50, *">
-        <Label class="action-bar-title" text="Registro nuevo usuario" colSpan="2"></Label>
+        <Label class="action-bar-title" text="Restablecer contraseña" colSpan="2"></Label>
     </GridLayout>
 </ActionBar>
 
@@ -21,25 +21,8 @@
                 </TextField>
         </StackLayout>
 
-        <StackLayout class="input-field">
-                <TextField hint="Contraseña" 
-                    class="input"      
-                    [(ngModel)]='this.model.password'
-                    secure="true"
-                >
-                </TextField>     
-        </StackLayout>
 
-        <StackLayout  class="input-field">
-        <TextField class="input" 
-                hint="Confirmar contraseña" 
-                [(ngModel)]='this.model.password2' 
-                secure="true"
-                >
-                </TextField>
-        </StackLayout>
-
-        <Button  (tap)="Create()" class="btn-primary" text="Registrarse"></Button>
+        <Button  (tap)="resetPassword()" class="btn-primary" text="Restablecer contraseña"></Button>
 
   </StackLayout>
 

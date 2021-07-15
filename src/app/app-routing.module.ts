@@ -5,11 +5,13 @@ import { InfUserComponent } from './inf-user/inf-user.component';
 import { LoginComponent } from './login/login.component';
 import {CalculadoraComponent} from './calculadora/calculadora.component'
 import { RegistroComponent } from './login/registro/registro.component';
+import { Restablecer_passComponent } from './login/restablecer_pass/restablecer_pass.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
+  { path: 'restablcer', component: Restablecer_passComponent},
   { path: 'calculadora', component: CalculadoraComponent },
   { path: 'inf-user', component: InfUserComponent },
   {
