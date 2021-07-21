@@ -15,11 +15,9 @@ import { UserModel } from '~/app/model/user.model';
 export class Restablecer_passComponent implements OnInit {
 
 	private feedback: Feedback;
-	
 	public model: UserModel;
 	enviado:boolean=false;
 	
-
 	constructor( private router: RouterExtensions) { 
 		this.feedback = new Feedback();
 		this.model=new UserModel();
@@ -61,6 +59,6 @@ export class Restablecer_passComponent implements OnInit {
 		  });
 	}
 
-
+4
 
 }

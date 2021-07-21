@@ -52,6 +52,7 @@
   margin-bottom:15;
 }
 
+
 .nt-drawer__header-image1 {
   color: const(rgb(5, 3, 70));
   margin-bottom:30;
@@ -106,6 +107,17 @@ margin-bottom:30;
   color: rgb(15, 15, 15);
   font-weight: bold;
  
+}
+
+.btn-close{
+  background-color:rgb(134, 126, 126);
+  border-radius: 15%;
+  width: 80%;
+  font-size: 20;
+  font-family: 'Font Awesome 5 Free', 'fa-regular-400';
+  color: black;
+  font-weight: bold;
+
 }
 .input-field{
   margin-bottom: 10;

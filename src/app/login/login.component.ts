@@ -1,13 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Application, Frame, login } from '@nativescript/core';
 import { Feedback, FeedbackType, FeedbackPosition } from "nativescript-feedback";
 import { firebase } from '@nativescript/firebase';
 import { UserModel } from '../model/user.model';
-import { capitalizationType, Dialogs, inputType, PromptOptions, PromptResult } from "@nativescript/core";
 import { RouterExtensions } from '@nativescript/angular';
-
-
-
+import { LoginService } from '../service/login.service';
 
 @Component({
 	moduleId: module.id,
@@ -19,16 +15,16 @@ import { RouterExtensions } from '@nativescript/angular';
 export class LoginComponent implements OnInit {
 	private feedback: Feedback;	
 	public model: UserModel;
+	
 
-	constructor( private router: RouterExtensions) { 
+	constructor( private router: RouterExtensions,private login: LoginService) { 
 		this.feedback = new Feedback();
 		this.model=new UserModel();
 		this.model.email="";
-		this.model.password="";
+		this.model.password="";		
 	}
 
-	ngOnInit() { 
-		
+	ngOnInit() { 	
 	}
 
 	auth(){
@@ -43,7 +39,7 @@ export class LoginComponent implements OnInit {
 				message: "Inició sessión correctamente "
 				
 			});
-
+			this.login.sendToken1(user.uid);
 			this.router.navigate(['/home']);
 		
 			
@@ -67,6 +63,12 @@ export class LoginComponent implements OnInit {
 	restablecer(){
 		this.router.navigate(['/restablcer']);
 	}
+
+
+
+
+
+	
 }
 
 

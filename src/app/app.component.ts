@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { NavigationEnd, Router } from '@angular/router'
 import { RouterExtensions } from '@nativescript/angular'
+require( "nativescript-localstorage" );
 import {
   DrawerTransitionBase,
   RadSideDrawer,
@@ -47,5 +48,10 @@ export class AppComponent implements OnInit {
 
     const sideDrawer = <RadSideDrawer>Application.getRootView()
     sideDrawer.closeDrawer()
+  }
+  onClose() {
+    
+    localStorage.removeItem("LoggedInUser");
+    this.router.navigate(["login"]);
   }
 }
