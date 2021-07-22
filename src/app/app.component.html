@@ -100,7 +100,8 @@ https://docs.nativescript.org/angular/ui/professional-ui-components/ng-SideDrawe
 
  
            class="nt-drawer__list-item"
-          (tap)="onClose()">
+           [class.-selected]="isComponentSelected('/')"
+          (tap)="close()">
           <Label col="0" text="&#xf2f5;" class="nt-icon fas"></Label>
           <Label col="1" text="Cerrar sessión" class="p-r-10"></Label>
         </GridLayout>

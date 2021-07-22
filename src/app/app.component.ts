@@ -8,7 +8,8 @@ import {
   SlideInOnTopTransition,
 } from 'nativescript-ui-sidedrawer'
 import { filter } from 'rxjs/operators'
-import { Application } from '@nativescript/core'
+import { Application,Dialogs } from '@nativescript/core'
+import { TNSFancyAlert } from '@nstudio/nativescript-fancyalert';
 
 @Component({
   selector: 'ns-app',
@@ -50,8 +51,44 @@ export class AppComponent implements OnInit {
     sideDrawer.closeDrawer()
   }
   onClose() {
-    
-    localStorage.removeItem("LoggedInUser");
-    this.router.navigate(["login"]);
+    Dialogs.confirm({
+      title: "Salir",
+      message: "¿Estas seguro de salir de la aplicación?",
+      okButtonText: "Si",
+      cancelButtonText: "No",
+      
+  }).then(function (result) {
+      // result argument is boolean
+      console.log("Dialog result: " + result);
+      localStorage.removeItem("LoggedInUser");
+      this.routerExtensions.navigate(['/inf-user']);
+      console.log("hola");
+     
+  });
+  }
+
+  close(){
+   
+    const sideDrawer = <RadSideDrawer>Application.getRootView()
+    sideDrawer.closeDrawer()
+
+
+    TNSFancyAlert.showWarning(
+      "Salir",
+      "¿Estas seguro de salir de la aplicación?: ",
+      "Aceptar",
+    ).then(() => {
+      this.onCloseNavigate();
+
+    });
+   
+  }
+
+  onCloseNavigate(){
+    localStorage.removeItem("LoggedInUser"); 
+    this.routerExtensions.navigate(['/inf-user'], { clearHistory: true  , transition: {
+      name: 'slide',
+    }, });
+
   }
 }
