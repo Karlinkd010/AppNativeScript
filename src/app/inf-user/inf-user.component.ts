@@ -3,6 +3,7 @@ import { Application } from '@nativescript/core';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { UserService } from '../service/user.service';
 import { UserModel } from '../model/user.model';
+import { RouterExtensions } from '@nativescript/angular';
 
 @Component({
 	moduleId: module.id,
@@ -20,7 +21,7 @@ export class InfUserComponent implements OnInit {
 	phone:number;
 
 
-	constructor(private user: UserService) { }
+	constructor(private user: UserService,private routerExtensions: RouterExtensions) { }
 
 	ngOnInit() { 
 		this.user.getUser().subscribe((response)=>{
@@ -39,5 +40,11 @@ export class InfUserComponent implements OnInit {
 	onDrawerButtonTap(): void {
 		const sideDrawer = <RadSideDrawer>Application.getRootView()
 		sideDrawer.showDrawer()
+	  }
+	  eComponent(){
+		this.routerExtensions.navigate(['/edit-perfil'], {  transition: {
+			name: 'slide',
+		  }, });
+
 	  }
 }

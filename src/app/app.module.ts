@@ -15,6 +15,7 @@ import {RegistroComponent} from './login/registro/registro.component'
 import {InfUserComponent} from './inf-user/inf-user.component'
 import {CalculadoraComponent} from './calculadora/calculadora.component'
 import {Restablecer_passComponent} from './login/restablecer_pass/restablecer_pass.component'
+import {EditPerfilComponent} from './inf-user/edit-perfil/edit-perfil.component'
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -30,7 +31,8 @@ import {Restablecer_passComponent} from './login/restablecer_pass/restablecer_pa
                 InfUserComponent,
                 CalculadoraComponent,
                 RegistroComponent,
-                Restablecer_passComponent
+                Restablecer_passComponent,
+                EditPerfilComponent
               ],
   schemas: [NO_ERRORS_SCHEMA],
   providers: [UserService,LoginService,GuardsService],

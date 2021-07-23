@@ -1,0 +1,38 @@
+
+<ActionBar class="action-bar">
+    <NavigationButton visibility="hidden"></NavigationButton>
+    <GridLayout columns="50, *">
+        <Label class="action-bar-title" text="Perfil" colSpan="2"></Label>
+    </GridLayout>
+</ActionBar>
+
+
+<FlexboxLayout class="page">
+  <StackLayout class="form">
+  
+  <Label class="header1" text="Actualizar Perfil"></Label>
+
+  <Image class="nt-drawer__header-image fas t-60" src="font://&#xf2bd;"></Image>
+
+ 
+  <StackLayout class="input-field">
+      <TextField hint="Nombre del Uusuario" 
+            class="input"         
+           [(ngModel)]='this.model.name'       
+           >
+           </TextField>
+  </StackLayout>
+
+  <StackLayout class="input-field">
+          <TextField hint="Telefono" 
+            class="input"            
+            [(ngModel)]='this.model.phone'            
+           >
+           </TextField>     
+  </StackLayout>
+
+
+  <Button  class="btn-primary" text="Actualizar"></Button>
+  </StackLayout>
+
+</FlexboxLayout>

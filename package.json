@@ -49,6 +49,7 @@
     "@nativescript/angular": "~11.8.0",
     "@nativescript/core": "~8.0.0",
     "@nativescript/firebase": "^11.1.3",
+    "@nativescript/imagepicker": "^1.0.5",
     "@nativescript/secure-storage": "^3.0.0",
     "@nativescript/social-share": "^2.0.4",
     "@nativescript/theme": "~3.0.1",

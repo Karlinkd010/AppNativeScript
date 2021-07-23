@@ -7,6 +7,7 @@ import {CalculadoraComponent} from './calculadora/calculadora.component'
 import { RegistroComponent } from './login/registro/registro.component';
 import { Restablecer_passComponent } from './login/restablecer_pass/restablecer_pass.component';
 import { GuardsService } from './service/guards.service';
+import { EditPerfilComponent } from './inf-user/edit-perfil/edit-perfil.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inf-user', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'restablcer', component: Restablecer_passComponent},
   { path: 'calculadora', component: CalculadoraComponent },
+  { path: 'edit-perfil', component: EditPerfilComponent },
   { path: 'inf-user', component: InfUserComponent ,canActivate: [GuardsService]},
   {
     path: 'home',
